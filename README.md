@@ -5,7 +5,6 @@
 # LALR Parser – Implementação em C++
 
 Este repositório contém a implementação de um **analisador sintático LALR(1)** desenvolvido como parte da disciplina de **Compiladores**, no curso de Ciência da Computação.  
-Toda a lógica do lexer, das tabelas ACTION/GOTO e do parser shift-reduce foi implementada manualmente, de forma totalmente didática.
 ---
 
 ## 📘 Visão Geral
@@ -15,6 +14,8 @@ O projeto implementa um parser LALR(1) simples para expressões aritméticas env
 - números (num)
 - operadores + e *
 - parênteses
+
+Toda a lógica do lexer, das tabelas ACTION/GOTO e do parser shift-reduce foi implementada manualmente, de forma totalmente didática.
 
 ### Gramática Utilizada 
 S → E
