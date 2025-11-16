@@ -119,5 +119,3 @@ Compiladores – Princípios, Técnicas e Ferramentas (Dragon Book)
 Appel, A. W.
 Modern Compiler Implementation
 
-Material da disciplina de Compiladores — [Nome da Instituição]
-
