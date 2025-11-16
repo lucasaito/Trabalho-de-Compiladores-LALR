@@ -18,8 +18,11 @@ O projeto implementa um parser LALR(1) simples para expressões aritméticas env
 
 ### Gramática Utilizada 
 S → E
+
 E → E + T | T
+
 T → T * F | F
+
 F → ( E ) | id
 
 ## O Código inclui
@@ -47,7 +50,10 @@ F → ( E ) | id
 
 ## 🧩 Estrutura do Projeto
 /src
-└── main.cpp   # tokenização, tabelas, produções, parser e main()
+
+└── main.cpp   
+
+tokenização, tabelas, produções, parser e main()
 ### O código inclui as seguintes seções:
 - Tokenização
 - Definição de tipos de tokens
@@ -92,13 +98,18 @@ Entrada aceita pela gramática LALR(1).
 
 ### ✔️ Exemplos válidos
 id + id
+
 id * (id + id)
+
 ( id )
+
 a + b * c
 
 ### ❌ Exemplos inválidos
 + id
++ 
 id * ( )
+
 ( id + * id )
 
 ---
