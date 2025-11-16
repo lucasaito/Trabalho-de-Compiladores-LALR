@@ -5,48 +5,58 @@
 # LALR Parser – Implementação em C++
 
 Este repositório contém a implementação de um **analisador sintático LALR(1)** desenvolvido como parte da disciplina de **Compiladores**, no curso de Ciência da Computação.  
-
+Toda a lógica do lexer, das tabelas ACTION/GOTO e do parser shift-reduce foi implementada manualmente, de forma totalmente didática.
 ---
 
 ## 📘 Visão Geral
 
-O trabalho consiste na implementação, em C++, de um **parser LALR(1)** baseado em uma gramática definida.  
-O fluxo geral segue as etapas clássicas de um compilador:
+O projeto implementa um parser LALR(1) simples para expressões aritméticas envolvendo:
+- identificadores (id)
+- números (num)
+- operadores + e *
+- parênteses
 
-1. Definição da gramática (GLC)  
-2. Construção dos conjuntos LR  
-3. Fusão dos estados para obtenção da tabela LALR  
-4. Implementação das estruturas de análise  
-5. Testes com entradas válidas e inválidas  
+### Gramática Utilizada 
+S → E
+E → E + T | T
+T → T * F | F
+F → ( E ) | id
 
-O objetivo é consolidar os conceitos estudados na disciplina, trazendo a teoria para um ambiente prático de programação.
-
+## O Código inclui
+1. Tokenização simples (sem analisador léxico externo)
+2. Tabelas ACTION e GOTO preenchidas manualmente
+3. Produções armazenadas em vetor de regras
+4. Implementação do autômato shift-reduce LALR(1)
+5. Mensagens de redução + aceitação da entrada
 ---
 ## 🧱 Funcionalidades Implementadas
 
-- Construção programática da tabela **ACTION** e **GOTO**  
-- Implementação de um analisador **shift-reduce**  
-- Tratamento de erros sintáticos  
-- Impressão passo a passo da análise (modo detalhado)  
-- Suporte a:
-  - Produções recursivas
-  - Alternativas múltiplas
-  - Tokens terminais e não terminais bem definidos
-
+- Tokenização de lexemas individuais (id, num, operadores, parênteses) 
+- Tabela ACTION[12][7] totalmente construída na função initTables() 
+- Tabela GOTO[12][3] também definida manualmente   
+- Processo de parsing:
+  - shift
+  - reduce
+  - accept
+  - erro sintático
+- Pilha de estados implementada com std::stack
+- Reduções impressas durante a análise (Reduce usando produção X)
+- Suporte a fim de entrada com token $
+  
 ---
 
 ## 🧩 Estrutura do Projeto
 /src
-├── lexer.cpp # (opcional) analisador léxico simples
-├── parser.cpp # implementação do algoritmo LALR
-├── grammar.hpp # definição da gramática
-├── table.hpp # tabela ACTION/GOTO
-├── utils.hpp # funções auxiliares
-└── main.cpp # ponto de entrada do compilador
+└── main.cpp   # tokenização, tabelas, produções, parser e main()
+### O código inclui as seguintes seções:
+- Tokenização
+- Definição de tipos de tokens
+- Definição da tabela ACTION
+- Definição da tabela GOTO
+- Produções
+- Parser shift-reduce
+- Função main
 
-/tests
-├── valid/ # entradas válidas
-└── invalid/ # entradas inválidas
 
 ---
 
@@ -56,49 +66,52 @@ Certifique-se de usar C++17 ou superior.
 
 Windows (MinGW)
 ```bash
-g++ -std=c++17 src/*.cpp -o lalr.exe
+g++ -std=c++17 main.cpp -o lalr.exe
+```
+Linux / WSL / Mac
+
+```bash
+g++ -std=c++17 main.cpp -o lalr
 ```
 
 ---
 
 ## ▶️ Como Executar
 
-### Executar com arquivo de entrada
+### O programa pede a expressão via entrada padrão:
 ```bash
-./lalr entrada.txt
+./lalr
+Digite uma expressao: id + id * id
 ```
-### Executar passando a string diretamente
+### O parser exibirá as reduções e, se tudo estiver correto:
 ```bash
-echo "x = x + 1;" | ./lalr
+Entrada aceita pela gramática LALR(1).
 ```
-### Gramática Utilizada 
-S → E
-E → E + T | T
-T → T * F | F
-F → ( E ) | id
-
----
 
 ## 🧪 Testes
 
 ### ✔️ Exemplos válidos
 id + id
-id * ( id + id )
+id * (id + id)
+( id )
+a + b * c
 
 ### ❌ Exemplos inválidos
-+ id id
++ id
 id * ( )
+( id + * id )
 
 ---
 
 ## 🏫 Objetivos Educacionais
-Este trabalho visa:
+Este trabalho busca reforçar:
 
-1. Entender profundamente o método LALR(1)
-2. Implementar na prática um autômato LR
-3. Resolver conflitos shift/reduce e reduce/reduce
-4. Relacionar teoria → prática no contexto de compiladores
-5. Fortalecer a capacidade de analisar gramáticas e implementar parsers reais
+1. Compreensão de gramáticas LR
+2. Construção de tabelas LALR(1)
+3. Uso de autômatos de pilha LR
+4. Resolução prática de conflitos shift/reduce
+5. Implementação manual de parsers reais
+6. Relação entre teoria e implementação em C++
 
 ---
 
