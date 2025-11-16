@@ -1,13 +1,12 @@
 # LALR Parser – Implementação em C++
 
 Este repositório contém a implementação de um **analisador sintático LALR(1)** desenvolvido como parte da disciplina de **Compiladores**, no curso de Ciência da Computação.  
-O projeto aplica conceitos fundamentais de análise sintática bottom-up, construção de tabelas LALR e desenvolvimento de componentes essenciais de um compilador.
 
 ---
 
 ## 📘 Visão Geral
 
-O trabalho consiste na implementação, em C++, de um **parser LALR(1)** baseado em uma gramática definida pelo grupo.  
+O trabalho consiste na implementação, em C++, de um **parser LALR(1)** baseado em uma gramática definida.  
 O fluxo geral segue as etapas clássicas de um compilador:
 
 1. Definição da gramática (GLC)  
@@ -68,7 +67,7 @@ g++ -std=c++17 src/*.cpp -o lalr.exe
 ```bash
 echo "x = x + 1;" | ./lalr
 ```
-### Exemplo da Gramática Utilizada (demonstração)
+### Gramática Utilizada 
 S → E
 E → E + T | T
 T → T * F | F
