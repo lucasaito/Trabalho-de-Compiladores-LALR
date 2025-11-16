@@ -69,26 +69,19 @@ tokenização, tabelas, produções, parser e main()
 
 ## ⚙️ Como Compilar
 
-Certifique-se de usar C++17 ou superior.
-
-Windows (MinGW)
-```bash
-g++ -std=c++17 main.cpp -o lalr.exe
-```
-Linux / WSL / Mac
-
-```bash
-g++ -std=c++17 main.cpp -o lalr
-```
+Certifique-se de usar G++ (GNU C++ Compiler).
 
 ---
 
 ## ▶️ Como Executar
 
-### O programa pede a expressão via entrada padrão:
+### Gerar um executável na pasta local:
 ```bash
-./lalr
-Digite uma expressao: id + id * id
+g++ lalr.cpp -o lalr
+```
+### Digitar uma entrada
+```bash
+(a + b) * c
 ```
 ### O parser exibirá as reduções e, se tudo estiver correto:
 ```bash
@@ -136,6 +129,5 @@ Este trabalho busca reforçar:
 Aho, A. V.; Lam, M.; Sethi, R.; Ullman, J.
 Compiladores – Princípios, Técnicas e Ferramentas (Dragon Book)
 
-Appel, A. W.
-Modern Compiler Implementation
+
 
