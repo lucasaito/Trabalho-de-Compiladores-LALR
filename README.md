@@ -55,6 +55,9 @@ Windows (MinGW)
 ```bash
 g++ -std=c++17 src/*.cpp -o lalr.exe
 ```
+
+---
+
 ## ▶️ Como Executar
 
 ### Executar com arquivo de entrada
@@ -71,7 +74,10 @@ E → E + T | T
 T → T * F | F
 F → ( E ) | id
 
+---
+
 ## 🧪 Testes
+
 ### ✔️ Exemplos válidos
 id + id
 id * ( id + id )
@@ -80,16 +86,27 @@ id * ( id + id )
 + id id
 id * ( )
 
+---
+
 ## 🏫 Objetivos Educacionais
 Este trabalho visa:
 
-Entender profundamente o método LALR(1)
-Implementar na prática um autômato LR
-Resolver conflitos shift/reduce e reduce/reduce
-Relacionar teoria → prática no contexto de compiladores
-Fortalecer a capacidade de analisar gramáticas e implementar parsers reais
+1. Entender profundamente o método LALR(1)
+2. Implementar na prática um autômato LR
+3. Resolver conflitos shift/reduce e reduce/reduce
+4. Relacionar teoria → prática no contexto de compiladores
+5. Fortalecer a capacidade de analisar gramáticas e implementar parsers reais
 
-##👥 Integrantes do Grupo
+---
+
+## 👥 Integrantes do Grupo
+- Gustavo Tramarin
+- Ivan Carlos Amaral Galvão Ribeiro
+- João Filipe Castoldo Liotto
+- Lucas Saito Sanzovo
+- Renato Parra
+
+---
 
 ##📚 Referências
 
