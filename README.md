@@ -97,20 +97,15 @@ Entrada aceita pela gramática LALR(1).
 ## 🧪 Testes
 
 ### ✔️ Exemplos válidos
-id + id
-
-id * (id + id)
-
-( id )
-
-a + b * c
+- id + id
+- id * (id + id)
+- ( id )
+- a + b * c
 
 ### ❌ Exemplos inválidos
-+ id
-+ 
-id * ( )
-
-( id + * id )
+- + id
+- id * ( )
+- ( id + * id )
 
 ---
 
