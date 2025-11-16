@@ -15,9 +15,7 @@ O projeto implementa um parser LALR(1) simples para expressões aritméticas env
 - operadores + e *
 - parênteses
 
-Toda a lógica do lexer, das tabelas ACTION/GOTO e do parser shift-reduce foi implementada manualmente, de forma totalmente didática.
-
-### Gramática Utilizada 
+### 📝Gramática Utilizada 
 S → E
 
 E → E + T | T
@@ -26,12 +24,6 @@ T → T * F | F
 
 F → ( E ) | id
 
-## O Código inclui
-1. Tokenização simples (sem analisador léxico externo)
-2. Tabelas ACTION e GOTO preenchidas manualmente
-3. Produções armazenadas em vetor de regras
-4. Implementação do autômato shift-reduce LALR(1)
-5. Mensagens de redução + aceitação da entrada
 ---
 ## 🧱 Funcionalidades Implementadas
 
@@ -52,18 +44,7 @@ F → ( E ) | id
 ## 🧩 Estrutura do Projeto
 /src
 
-└── main.cpp   
-
-tokenização, tabelas, produções, parser e main()
-### O código inclui as seguintes seções:
-- Tokenização
-- Definição de tipos de tokens
-- Definição da tabela ACTION
-- Definição da tabela GOTO
-- Produções
-- Parser shift-reduce
-- Função main
-
+└── lalr.cpp   
 
 ---
 
@@ -87,6 +68,8 @@ g++ lalr.cpp -o lalr
 ```bash
 Entrada aceita pela gramática LALR(1).
 ```
+
+---
 
 ## 🧪 Testes
 
@@ -124,7 +107,7 @@ Este trabalho busca reforçar:
 
 ---
 
-##📚 Referências
+## 📚 Referências
 
 Aho, A. V.; Lam, M.; Sethi, R.; Ullman, J.
 Compiladores – Princípios, Técnicas e Ferramentas (Dragon Book)
