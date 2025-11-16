@@ -4,7 +4,7 @@
 
 # LALR Parser – Implementação em C++
 
-Este repositório contém a implementação de um **analisador sintático LALR(1)** desenvolvido como parte da disciplina de **Compiladores**, no curso de Ciência da Computação.  
+Este repositório contém a implementação de um **analisador sintático LALR(1)** com construção de Árvore Sintática Abstrata (AST), desenvolvido como parte da disciplina de **Compiladores**, no curso de Ciência da Computação.  
 ---
 
 ## 📘 Visão Geral
@@ -26,26 +26,11 @@ F → ( E ) | id
 
 ---
 ## 🧱 Funcionalidades Implementadas
-
-- Tokenização de lexemas individuais (id, num, operadores, parênteses) 
-- Tabela ACTION[12][7] totalmente construída na função initTables() 
-- Tabela GOTO[12][3] também definida manualmente   
-- Processo de parsing:
-  - shift
-  - reduce
-  - accept
-  - erro sintático
-- Pilha de estados implementada com std::stack
-- Reduções impressas durante a análise (Reduce usando produção X)
-- Suporte a fim de entrada com token $
+- Tokenização
+- Parsing LALR(1)
+- Impressão detalhada (trace)
+- Construção da AST
   
----
-
-## 🧩 Estrutura do Projeto
-/src
-
-└── lalr.cpp   
-
 ---
 
 ## ⚙️ Como Compilar
@@ -60,11 +45,23 @@ Certifique-se de usar G++ (GNU C++ Compiler).
 ```bash
 g++ lalr.cpp -o lalr
 ```
+
+### No terminal, dentro do diretório acessar o executável:
+```bash
+./lalr.exe
+```
+
 ### Digitar uma entrada
 ```bash
 (a + b) * c
 ```
 ### O parser exibirá as reduções e, se tudo estiver correto:
+- shifts
+- reduces
+- transições
+- pilha
+- AST final
+- mensagem de aceitação
 ```bash
 Entrada aceita pela gramática LALR(1).
 ```
