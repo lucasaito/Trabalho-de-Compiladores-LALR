@@ -1,3 +1,6 @@
+
+![Uploading bonzi.gif…]()
+
 # LALR Parser – Implementação em C++
 
 Este repositório contém a implementação de um **analisador sintático LALR(1)** desenvolvido como parte da disciplina de **Compiladores**, no curso de Ciência da Computação.  
